@@ -1,10 +1,9 @@
-use soroban_sdk::Env;
-use super::storage_types::{DataKey, Investor};
+use soroban_sdk::{Env, Address};
+use super::storage_types::DataKey;
 
-fn add_investor(env: Env, investor: Investor) {
-    if !check_admin(&env) {
+fn add_investor(env: &Env, investor_address: Address) {
+    if !crate::admin::check_admin(env) {
         panic!("Only the admin can add an investor.");
     }
-    env.data().set(DataKey::Investor(investor.address.clone()), investor);
+    env.storage().instance().set(&DataKey::Investor(investor_address.clone()), &investor_address);
 }
-

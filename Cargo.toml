@@ -1,23 +1,31 @@
 [package]
-name = "reputation_dao"
+name = "soroban_business_entity_dao"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["cdylib"]
 
 [features]
 testutils = ["soroban-sdk/testutils"]
 
 [dependencies]
-soroban-sdk = "0.1.0"
-soroban-auth = "0.1.0"
+soroban-sdk = { version = "0.9.2" }
+soroban-token-sdk = { version = "0.9.2" }
 
 [dev_dependencies]
-soroban-sdk = { version = "0.1.0", features = ["testutils"] }
-soroban-auth = { version = "0.1.0", features = ["testutils"] }
+soroban-sdk = { version = "0.9.2", features = ["testutils"] }
+soroban-auth = { version = "0.8.3", features = ["testutils"] }
+
+[workspace.dependencies]
+soroban-sdk = { version = "0.9.2", path = "soroban-sdk" }
+soroban-sdk-macros = { version = "0.9.2", path = "soroban-sdk-macros" }
+soroban-spec = { version = "0.9.2", path = "soroban-spec" }
+soroban-spec-rust = { version = "0.9.2", path = "soroban-spec-rust" }
+soroban-ledger-snapshot = { version = "0.9.2", path = "soroban-ledger-snapshot" }
+soroban-token-sdk = { version = "0.9.2", path = "soroban-token-sdk" }
 
 [profile.release]
 opt-level = "z"
