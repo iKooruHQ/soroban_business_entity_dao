@@ -32,7 +32,7 @@ fn create_proposal(env: &Env, proposer: Address, proposal: Proposal) -> u32 {
 }
 
 fn get_and_inc_prop_id(env: &Env) -> u32 {
-    // I fetch the current proposal ID and default to 0 if it's not found.
+    // Fetch the current proposal ID and default to 0 if it's not found.
     let prev: u32 = env.storage().persistent().get::<_, u32>(&DataKey::Admin).unwrap_or_default();
 
     // After fetching, I increment the ID for the next proposal and save it back.
@@ -54,6 +54,7 @@ fn execute(env: &Env, prop_id: u32) {
     // Before executing, I verify if the proposal's conditions are met.
     assert!(prop.end_time > env.ledger().timestamp());
     assert!(prop.tot_votes > tot_shares(env) / 2);
+    
 
     // Each instruction in the proposal is then executed.
     for instr in prop.instr.iter() {

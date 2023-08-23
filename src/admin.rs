@@ -27,9 +27,9 @@ fn set_admin(env: &Env, admin: Address) {
     env.storage().instance().set(&key, &admin);
 }
 
-// Use this function to get the invoker's address, or update it according to your SDK
+// Use this function to get the invoker's address, or update it according to Soroban SDK
 fn get_invoker_from_env(env: &Env) -> Address {
-    // Replace the following with the actual method to get the invoker's address from your SDK
+    // Replace the following with the actual method to get the invoker's address from Soroban SDK
     // Example: Address::from_env(env)
-    panic!("Replace this with the actual method to get the invoker's address from your SDK");
+    panic!("Replace this with the actual method to get the invoker's address from Soroban SDK");
 }
