@@ -20,7 +20,7 @@ fn unlock_milestone(env: &Env, milestone_id: u32, investor_address: &Address) {
 
     let mut investor: Investor = match env.data().get(DataKey::Investor(investor_address.clone())) {
         Some(i) => i.unwrap(),
-        None => panic!("Investor not found!"), // This panic might be redundant since you've checked the investor existence before.
+        None => panic!("Investor not found!"), // This panic might be redundant - checked the investor existence before.
     };
 
     let milestone: &mut Milestone = investor.milestones.get_mut(milestone_id as usize).expect("Invalid milestone ID!");
