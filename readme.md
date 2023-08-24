@@ -8,7 +8,7 @@ In today's rapidly evolving digital landscape, startups demand a more agile, sca
 
 # 🚧 DAO Under Construction 🚧
 
-This startup DAO contract is in its developmental phase. We're committed to delivering a robust solution. Stay tuned for updates.
+This startup DAO contract is in its developmental phase, and is not complete. We're committed to delivering a robust solution. Stay tuned for updates.
 
 ## Key Features: :key:
 
